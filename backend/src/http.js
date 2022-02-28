@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const routerNewUser = require('./routers/signupUserRouter');
+const routerLoginUser = require('./routers/loginUserRouter');
 const erroJoi = require('./middlewares/middlewareErroJoi');
 const domainErro = require('./middlewares/middlewareDomainErro');
 const badyParse = require('body-parser');
@@ -13,6 +14,7 @@ const app = express();
 app.use(badyParse.json());
 
 app.use('/signup', routerNewUser);
+app.use('/login', routerLoginUser);
 app.use(erroJoi);
 app.use(domainErro);
 

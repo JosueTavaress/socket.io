@@ -13,4 +13,22 @@ const addUser = async (createUser) => {
    return { id, name };
 };
 
-module.exports = { addUser };
+const login = async (dataUser) => {
+   const user = await model.getUserEmail(dataUser.email);
+
+   if (!user.length) {
+      const erro = { status: 404, message: 'User not found' };
+      throw erro;
+   }
+
+   const { id, name, password } = user[0];
+
+   if (dataUser.password !== password) {
+      const erro = { status: 401, message: 'Password incorrect' }
+      throw erro;
+   }
+
+   return {id, name};
+}
+
+module.exports = { addUser, login };

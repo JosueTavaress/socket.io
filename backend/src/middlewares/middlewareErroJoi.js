@@ -6,7 +6,7 @@ const erroJoi = (err, _req, res, next) => {
 
     return res.status(codes[key]).json({ error: err.message })
   }
-  next(err)
-}
+  next(err);
+};
 
 module.exports = erroJoi;

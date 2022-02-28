@@ -7,11 +7,11 @@ const addUser = async (req, _res, next) => {
 
   validateReq(schemaUser, dataUser);
 
-  const newUser = await service.addUser(dataUser);
+  const user = await service.addUser(dataUser);
 
-  req.body = newUser
+  req.body = user
 
   next();
-}
+};
 
 module.exports = { addUser };

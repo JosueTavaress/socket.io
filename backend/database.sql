@@ -45,7 +45,7 @@ ENGINE = InnoDB;
 -- Table `chatTime`.`menssage`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `chatTime`.`menssage` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `message` VARCHAR(255) NOT NULL,
   `user_id` INT NOT NULL,
   `chanel_id` INT NOT NULL,

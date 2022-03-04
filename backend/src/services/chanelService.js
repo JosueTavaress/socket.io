@@ -5,4 +5,9 @@ const getAllChenels = async () => {
  return chanels;
 }
 
-module.exports = { getAllChenels };
+const getChanelById = async (id) => {
+ const channel = await model.getChennelId(id);
+ return channel;
+};
+
+module.exports = { getAllChenels, getChanelById };

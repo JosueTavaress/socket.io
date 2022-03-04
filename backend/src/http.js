@@ -18,7 +18,12 @@ app.use(badyParse.json());
 app.use(cors());
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:5000",
+    methods: ["GET", "POST"]
+  }
+});
 
 app.use('/signup', routerNewUser);
 app.use('/login', routerLoginUser);

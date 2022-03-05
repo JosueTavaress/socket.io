@@ -88,6 +88,12 @@ CREATE TABLE IF NOT EXISTS `chatTime`.`subscribe` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO `chatTime`.`chanel` (`name`, `description`) VALUES ('software', 'desenvolvimento');
+INSERT INTO `chatTime`.`chanel` (`name`, `description`) VALUES ('geral', 'todas as pessoas');
+INSERT INTO `chatTime`.`chanel` (`name`, `description`) VALUES ('arte', 'artistas');
+INSERT INTO `chatTime`.`chanel` (`name`, `description`) VALUES ('humor', 'artista');
+INSERT INTO `chatTime`.`chanel` (`name`, `description`) VALUES ('games', 'video games');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

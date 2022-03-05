@@ -1,6 +1,7 @@
 # socket.io
 
 # Projeto chatTime - Back-End
+## A documentação da api foi desenvolvida pelo Swagger é essencial que ela seja consultada com a aplicação online exemplo http://localhost:5050/api-docs/
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 

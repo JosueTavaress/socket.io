@@ -45,7 +45,7 @@ export const getSubs = async (id, token) => {
 
 export const getMessagesChannel = async (idChannel, token) => {
   try {
-    const messages = await api.get(`chanels/messages/${idChannel}`,  {
+    const messages = await api.get(`chanels/messages/${idChannel}`, {
       headers: {
         'Authorization': `${token}`
       }
@@ -56,4 +56,20 @@ export const getMessagesChannel = async (idChannel, token) => {
   } catch (error) {
     return [];
   }
+}
+
+export const deleteSubscribe = async (token, idChannel) => {
+    try {
+      await api.delete(`http://localhost:5050/subscribe/${idChannel}`, {
+        headers: {
+          'Authorization': `${token}`
+        }
+      });
+
+      return true;
+
+    } catch (error) {
+      console.table(error);
+      return false;
+    }
 }

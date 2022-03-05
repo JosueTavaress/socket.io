@@ -12,4 +12,12 @@ const getSubUser = async ({idUser, idChannel}) => {
   return sub;
 };
 
-module.exports = { subscribe, getSubUser };
+const deleteSubscribe = async (id, idChannel) => {
+  const sql = `
+  DELETE FROM chatTime.subscribe WHERE user_id=? AND chanel_id=?
+  `;
+
+  await connection.execute(sql, [id, idChannel])
+}
+
+module.exports = { subscribe, getSubUser, deleteSubscribe };

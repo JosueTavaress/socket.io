@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
+import ButtonUnsubscibe from '../../components/buttonUnsubscribe';
 import { useParams } from 'react-router-dom';
 import { GetLocalStorage } from '../../service/localStorage';
 import { getMessagesChannel } from '../../service/requestApi';
@@ -58,6 +59,7 @@ const Chat = () => {
 
   return (
     <main className="container">
+      <ButtonUnsubscibe id={ id } token={token}/>
       <ul className="list">
         {messages.map((msg, index) => (
           <li

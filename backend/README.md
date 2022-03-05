@@ -47,7 +47,7 @@ Linux e macOS:
 
 ## ☕ Usando <chatTime>
 
-Para usar <a documentação da api>, siga estas etapas:
+Para usar a documentação da api, siga estas etapas:
 
 ```
 <npm run debug>

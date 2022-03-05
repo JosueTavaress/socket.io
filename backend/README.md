@@ -93,7 +93,7 @@ após o servidor está online entre em localhost:5050/api-docs
 
 ## 📫 Contribuindo para <chatTime>
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir com <chatTime>, siga estas etapas:
+Para contribuir com `<chatTime>`, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.

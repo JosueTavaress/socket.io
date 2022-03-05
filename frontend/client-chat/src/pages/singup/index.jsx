@@ -3,6 +3,7 @@ import validateEmail from 'email-format-check';
 import { saveLocalStorage } from '../../service/localStorage';
 import api from '../../api/connection';
 import { useNavigate } from 'react-router-dom';
+import './singup.css';
 
 const SingUp = () => {
   const [name, setName] = useState('');
@@ -42,10 +43,11 @@ const SingUp = () => {
   }
 
   return (
-    <section>
-      <div>
+    <section className='container-card'>
+     <div className='card'>
       <h2>Register</h2>
-      <div>
+
+     <div className='container-name-lasName'>
       <input 
       type="text"
       placeholder="Name"
@@ -56,7 +58,8 @@ const SingUp = () => {
       placeholder='Last name'
       onChange={ (e) => setLastName(e.target.value) }
       />
-      </div>
+     </div>
+
       <input
       type="text"
       placeholder='Email'
@@ -73,7 +76,9 @@ const SingUp = () => {
       >
         Register
         </button>
-      </div>
+
+     </div>
+
     </section>
   );
 };

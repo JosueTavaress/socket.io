@@ -1,0 +1,22 @@
+.container-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-name-lasName {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+} 
+
+.container-name-lasName > input {
+  width: 22vh;
+  height: 5vh;
+  padding-left: 20px;
+}

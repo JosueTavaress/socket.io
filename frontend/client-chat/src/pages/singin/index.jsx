@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import validateEmail from 'email-format-check';
 import { saveLocalStorage } from '../../service/localStorage';
+import './singin.css';
 import api from '../../api/connection';
 
 const Login = () => {
@@ -45,8 +46,8 @@ const Login = () => {
   };
 
   return (
-    <section>
-      <div >
+    <section className='container-card'>
+      <div className='card'>
         <input
           type="email"
           placeholder="Email"

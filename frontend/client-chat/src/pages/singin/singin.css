@@ -1,0 +1,24 @@
+.container-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin-top: 23vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card > input {
+  margin-bottom: 25px;
+  width: 50vh;
+  height: 5vh;
+  padding-left: 20px;
+}
+
+.card > button {
+  height: 6vh;
+  margin-bottom: 25px;
+}

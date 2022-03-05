@@ -32,6 +32,8 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
 * Você instalou a versão v16 `<nodejs / informado no README.md>`
 * Você instalou `<mysql />`
+* rodar o arquivo sql no banco de dados
+* Recomendação workbench
 
 ## 🚀 Subindo o `<chatTime-back-end>`
 
@@ -53,7 +55,7 @@ Para usar <a documentação da api>, siga estas etapas:
 após o servidor está online entre em localhost:5050/api-docs
   
 
-## exemplo
+## exemplo para rodar o servidor e acessar a documentação da api completa
   
   ![nodemon](https://user-images.githubusercontent.com/69441257/156900568-fbf19b23-855a-4e47-817e-d0c15504c898.png)
   ![api-docs](https://user-images.githubusercontent.com/69441257/156900826-856bed71-9475-47c4-9762-fc9892ed1e83.png)
@@ -61,7 +63,32 @@ após o servidor está online entre em localhost:5050/api-docs
   
 ## exemplo de resposta da api do endpoint login
   ![response](https://user-images.githubusercontent.com/69441257/156900993-3e0f212e-0247-40fd-8470-38dbc5a89147.png)
+  
+  
+## evento de conexão e seleção da sala via socket
+ para emitir o evento de seleção de sala e envio de mensagem deverá ser passada no evento
+  
+  <div>
+    <b>socket.emit('Select_Channel_Send_Message')</b>  
+  </div>
+  
+  ## exemplo
+  ![en](https://user-images.githubusercontent.com/69441257/156901451-19468922-6e3a-44de-b54d-4e7e1b3e8783.png)
+  
+  ## evento onde as mensagens serão escutadas caso o usuário esteja autendicado cadastrado e dentro da sala
+  obs: leia a documentação da api para resgatar todas as mensagens quando o usuário entrar pela primeira vez.
+  
+  ## para escutar os eventos do server (socket.io)
  
+  
+
+    socket.on('message', data);
+  
+  ## exemplo de retorno de menssagem do server socket io
+  
+  ![data](https://user-images.githubusercontent.com/69441257/156901672-b22896d7-c717-418c-8df6-b9140526a329.png)
+
+
 
 ## 📫 Contribuindo para <chatTime>
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->

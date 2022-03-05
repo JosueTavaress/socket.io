@@ -1,0 +1,372 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de conversas em real time",
+    "description": "Essa API tem o objetivo de si conectar em um chat de conversa e receber as mensagens em real time com socket.io e express",
+    "contact": {
+      "email": "josueferreira8.jf@gmail.com" 
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5050",
+      "description": "API de test"
+    }
+  ],
+  "paths": {
+    "/signup": {
+      "post": {
+       "summary": "cadastro de novo usuário",
+       "description": "essa rota será responsavel por cadastrar um novo usuário",
+       "tags": ["signup"],
+       "requestBody": {
+         "content": {
+           "application/json": {
+            "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "signup": {
+                  "value": {
+                    "name": "davi",
+                    "lastName": "silva",
+                    "password": "Jyds97%43dsf",
+                    "email": "davisilva07@gmail.com"
+                  }
+                }
+              }
+           }
+         }
+       },
+       "responses": {
+        "409": {
+          "description": "existing user"
+        },
+        "201": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "item": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IpXVCJ9.eyJpZCI6MywibmFtZSI6InRlc3RlIiwiaWF0IjoxNjQ2NDUyNTE5fQ.Ypw-mmTAuffIR8Aa2kk2E1R9Qr4j4ICeyOD5A4pmN"
+                }
+              }
+            }
+          }
+        }
+      }
+      }
+    },
+    "/login": {
+      "post": {
+       "summary": "login de usuario existente",
+       "description": "essa rota será responsavel por fazer o login de usuário",
+       "tags": ["login"],
+       "requestBody": {
+         "content": {
+           "application/json": {
+            "schema": {
+                "properties": {
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "signup": {
+                  "value": {
+                    "password": "Jyds97%43dsf",
+                    "email": "davisilva07@gmail.com"
+                  }
+                }
+              }
+           }
+         }
+       },
+       "responses": {
+        "404": {
+          "description": "User not found"
+        },
+        "401": {
+          "description": "Password incorrect"
+        },
+        "201": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "item": {
+                  "token": "string"
+                }
+              }, 
+              "examples": {
+                "signup": {
+                  "value": {
+                    "tokem": "yJhbGciOiJIUzI1NiIsInR5cCI6IpXVCJ9.eyJpZCI6MywibmFtZSI6InRlc3RlIiwiaWF0IjoxNjQ2NDUyNTE5fQ.Ypw-mmTAuffIR8Aa2kk2E1R9Qr4j4ICeyOD5A4pmN"
+                  }
+                }
+              }
+            }
+          }
+        }
+       }
+      }
+    },
+    "/chanels": {
+      "get": {
+       "summary": "retorna todas as salas de bate papo caso um token valido seja passado no headers (authorization)",
+       "description": "essa rota será responsavel por retornar todas as salas existentes",
+       "tags": ["chanels"],
+       "security": [{"bearerAuth": []}],
+       "requestBody": {
+         "content": {
+           "application/json": {
+
+           }
+         }
+       },
+       "responses": {
+        "401": {
+          "description": "token invalid"
+        },
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "item": {
+                  "channels": []
+                }
+              },
+              "examples": {
+                "chanels": {
+                  "value": {
+                   "chanels": [
+                      {
+                      "id": 1,
+                      "name": "software",
+                      "description": "back-and"
+                    },
+                    {
+                      "id": 2,
+                      "name": "negocios",
+                      "description": "adm"
+                    }
+                  ]
+                }
+               }
+              }
+            }
+          }
+        }
+       },
+       "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+       }
+      }
+    },
+    "/chanels/messages/{id}": {
+      "get": {
+       "summary": "busca todas as conversas do chat caso um token valido seja passado no headers (authorization)",
+       "description": "essa rota será responsavel por buscar todas as conversas do chat da sala passado como parametro",
+       "tags": ["messages"],
+       "parameters": [
+         {
+           "name": "id",
+           "in": "path",
+           "description": "nome da sala pelo id"
+         }
+       ],
+       "responses": {
+        "401": {
+          "description": "token invalid"
+        },
+        "404": {
+          "description": "user not subscribe"
+        },
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "item": {
+                  "messages": []
+                }
+              }, 
+              "examples": {
+                "messages": {
+                  "value": {
+                    "messages": [
+                      {
+                        "message": "alou",
+                        "data_time": "2022-03-05T08:39:34.000Z",
+                        "UserName": "alou",
+                        "channelName": "software",
+                        "description": "back-and",
+                        "last_name": "dsfdf"
+                      },
+                      {
+                        "message": "opa",
+                        "data_time": "2022-03-05T08:35:25.000Z",
+                        "UserName": "alou",
+                        "channelName": "software",
+                        "description": "back-and",
+                        "last_name": "dsfdf"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+       }
+      }
+    },
+    "/subscribe": {
+      "post": {
+       "summary": "faz a incrição do usuario no chat de mensagem",
+       "description": "essa rota será responsavel por increver o usuario no bate papo, caso um token valido seja passado no headers (authorization) & idChannel no body",
+       "tags": ["subscribe"],
+       "requestBody": {
+        "content": {
+          "application/json": {
+           "schema": {
+               "properties": {
+                 "idChannel": {
+                   "type": "string"
+                 }
+               }
+             },
+             "examples": {
+               "idChannel": {
+                 "value": {
+                   "idChannel": "3"
+                 }
+               }
+             }
+          }
+        }
+      },
+       "responses": {
+        "401": {
+          "description": "token invalid"
+        },
+        "409": {
+          "description": "user is already registered"
+        },
+        "400": {
+          "description": "idChannel is required"
+        },
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "item": {
+                  "id": {}
+                }
+              }, 
+              "examples": {
+                "id de incrição": {
+                  "value": {
+                    "id": "2"
+                  }
+                }
+              }
+            }
+          }
+        }
+       }
+      }
+    },
+    "/subscribe/{id}": {
+      "get": {
+       "summary": "retorna a incrição caso o usuario esteja incrito, e necessario que um token valido seja passado no headers (authorization)",
+       "description": "essa rota será responsavel por retorna informações de incrição",
+       "tags": ["subscribe"],
+       "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "nome da sala pelo id"
+        }
+      ],
+       "responses": {
+        "401": {
+          "description": "token invalid"
+        },
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "item": {
+                  "subscribe": []
+                }
+              }, 
+              "examples": {
+                "subscribe": {
+                  "value": {
+                    "subscribe": [
+                      {
+                        "id": 6,
+                        "user_id": 8,
+                        "chanel_id": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+       }
+      }
+    },
+    "/subscribe/{:id}": {
+      "delete": {
+       "summary": "desinscreve caso o usuario esteja incrito, e necessario que um token valido seja passado no headers (authorization)",
+       "description": "essa rota será responsavel por fazer o unsubcribe",
+       "tags": ["unsubscribe"],
+       "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "nome da sala pelo id"
+        }
+      ],
+       "responses": {
+        "401": {
+          "description": "token invalid"
+        },
+        "200": {
+          "description": "OK"
+        }
+       }
+      }
+    }
+  }
+}

@@ -38,7 +38,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
 * Você instalou a versão v16.0.0 `<nodejs />`
 * Você instalou `<mysql />`
-* Você leu `<guia / documentação_relacionada_ao_projeto *READE.me backend e RADME.me frontend>`.
+* Você leu `<guia / documentação_relacionada_ao_projeto *READE.md backend e RADME.md frontend>`.
 
 ## 🚀 Instalando <chatTime>
 

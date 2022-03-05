@@ -32,4 +32,8 @@ const subscribe = async ({idUser, idChannel}) => {
   return sub;
 };
 
-module.exports = { subscribe, getUserSubscribe };
+const unsubscribe = async (id, idChannel) => {
+  await model.deleteSubscribe(id, idChannel);
+}
+
+module.exports = { subscribe, getUserSubscribe, unsubscribe };

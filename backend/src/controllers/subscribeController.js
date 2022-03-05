@@ -24,4 +24,16 @@ const getSubs = async (req, res) => {
   res.status(200).json({ subscribe: subs });
 }
 
-module.exports = { subscribe, getSubs };
+const unsubscribe = async (req, res) => {
+  const { id } = req.params;
+  const { authorization } = req.headers;
+
+  const user = decodeJWT(authorization);
+
+  await service.unsubscribe(user.payload.id, id);
+
+  res.status(200).end();
+
+}
+
+module.exports = { subscribe, getSubs, unsubscribe };

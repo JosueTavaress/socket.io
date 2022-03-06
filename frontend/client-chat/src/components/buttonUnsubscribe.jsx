@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/btnUnsbscribe.css'
 import { useNavigate } from 'react-router-dom';
 import { deleteSubscribe } from '../service/requestApi'
 
@@ -15,7 +16,7 @@ const ButtonUnsubscibe = ({ token, id }) => {
   }
 
   return (
-    <button onClick={ unsubscribe }>
+    <button className='btn-Unsbcribe' onClick={ unsubscribe }>
       Unsubscribe
       </button>
   );

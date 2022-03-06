@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import './chat.css';
 import ButtonUnsubscibe from '../../components/buttonUnsubscribe';
 import { useParams } from 'react-router-dom';
 import { GetLocalStorage } from '../../service/localStorage';
@@ -58,24 +59,26 @@ const Chat = () => {
     setMessage(event.target.value);
 
   return (
+    <div className='chat-card'>
+    <ButtonUnsubscibe id={ id } token={token}/>
     <main className="container">
-      <ButtonUnsubscibe id={ id } token={token}/>
       <ul className="list">
         {messages.map((msg, index) => (
           <li
             key={index}
           >
-            <span>
+            <span className='message-chat'>
               {msg.message}
             </span>
-            <span>
+            <span className='date-message'>
               {dayjs(msg.data_time).format('DD/MM HH:mm')}
             </span>
           </li>
         ))}
       </ul>
-      <form onSubmit={handleFormSubmit}>
+      <form className='form-message-chat' onSubmit={handleFormSubmit}>
         <input
+          className='input-chat'
           onChange={handleInputChange}
           placeholder="Type your message"
           type="text"
@@ -83,6 +86,7 @@ const Chat = () => {
         />
       </form>
     </main>
+    </div>
   );
 };
 

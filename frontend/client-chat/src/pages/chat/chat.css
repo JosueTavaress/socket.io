@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Press+Start+2P&display=swap');
+
+.container {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ min-height: 95vh;
+}
+
+.form-message-chat {
+  display: flex;
+  justify-content: center;
+}
+
+.input-chat {
+  width: 100%;
+  height: 10vh;
+  padding-left: 20px;
+}
+
+.message-chat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.date-message {
+  margin-left: 15px;
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getChannels } from '../../service/requestApi';
 import {  GetLocalStorage } from '../../service/localStorage'
+import Loading from '../../components/loading';
 import BtnRooms from '../../components/buttonRoom';
 
 const Channels = () => {
@@ -23,7 +24,7 @@ const Channels = () => {
 
       },[token]);
 
-  if (load) return <div>CARREGANDO...</div> // componentizar
+  if (load) return <Loading />
   if (!token) return <div>user não autorizado é preciso si identificar</div> // componentizar
   if (!channels.length) return <div>não existe canais</div> // componentizar
 

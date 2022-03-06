@@ -1,0 +1,21 @@
+.container-loading {
+  width: 100%;
+  display: flex;
+  margin-top: 40vh;
+  justify-content: center;
+}
+
+.spin {
+  border: 3px solid hsla(185, 59%, 63%, 0.2);
+  border-top-color: #3c3b6e;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

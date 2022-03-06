@@ -89,7 +89,5 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 ## 😄 Seja um dos contribuidores<br>
 
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
-
 
 [⬆ Voltar ao topo](#Projeto-chatTime)<br>

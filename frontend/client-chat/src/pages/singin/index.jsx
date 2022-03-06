@@ -38,10 +38,13 @@ const Login = () => {
 
   if (unauthorizedUser) {
     return (
-      <>
-        <dir>senha ou email incorreto</dir>
-        <button onClick={ () => setUnauthorizedUser(false) }>Retorna</button>
-      </>
+      <section className='container-return'>
+      <div className='card-refused'>
+        <h3>Senha ou email incorreto</h3>
+        <button onClick={ () => setUnauthorizedUser(false) }>Return</button>
+      </div>
+    </section>
+  
     );
   };
 

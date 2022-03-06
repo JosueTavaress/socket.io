@@ -22,3 +22,27 @@
   height: 6vh;
   margin-bottom: 25px;
 }
+
+.container-return {
+  display: flex;
+  align-items: center;
+  margin-top: 23vh;
+  justify-content: center;
+}
+
+.card-refused {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-refused > h3 {
+  margin-bottom: 5vh;
+}
+
+.card-refused > button {
+  height: 6vh;
+  margin-bottom: 25px;
+  width: 40vh;
+  height: 6vh;
+}

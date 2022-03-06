@@ -57,9 +57,9 @@ Para usar <chatTime>, siga estas etapas:
 <o backend está setado para a porta 5050 e frontend 5000 (localhost)>
 ```
 
-## 📫 Contribuindo para <chatTime>
+## 📫  Para contribuindo com o projeto `<chatTime>`
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir com <chatTime>, siga estas etapas:
+siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.

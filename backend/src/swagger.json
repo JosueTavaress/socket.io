@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "API de conversas em real time",
-    "description": "Essa API tem o objetivo de si conectar em um chat de conversa e receber as mensagens em real time com socket.io e express",
+    "description": "Essa API tem o objetivo de se conectar em um chat de conversa e receber as mensagens em real time com socket.io e express",
     "contact": {
       "email": "josueferreira8.jf@gmail.com" 
     },
@@ -119,7 +119,7 @@
               "examples": {
                 "signup": {
                   "value": {
-                    "tokem": "yJhbGciOiJIUzI1NiIsInR5cCI6IpXVCJ9.eyJpZCI6MywibmFtZSI6InRlc3RlIiwiaWF0IjoxNjQ2NDUyNTE5fQ.Ypw-mmTAuffIR8Aa2kk2E1R9Qr4j4ICeyOD5A4pmN"
+                    "token": "yJhbGciOiJIUzI1NiIsInR5cCI6IpXVCJ9.eyJpZCI6MywibmFtZSI6InRlc3RlIiwiaWF0IjoxNjQ2NDUyNTE5fQ.Ypw-mmTAuffIR8Aa2kk2E1R9Qr4j4ICeyOD5A4pmN"
                   }
                 }
               }
@@ -247,7 +247,7 @@
     },
     "/subscribe": {
       "post": {
-       "summary": "faz a incrição do usuario no chat de mensagem",
+       "summary": "faz a inscrição do usuario no chat de mensagem",
        "description": "essa rota será responsavel por increver o usuario no bate papo, caso um token valido seja passado no headers (authorization) & idChannel no body",
        "tags": ["subscribe"],
        "requestBody": {
@@ -290,7 +290,7 @@
                 }
               }, 
               "examples": {
-                "id de incrição": {
+                "id de inscrição": {
                   "value": {
                     "id": "2"
                   }
@@ -304,8 +304,8 @@
     },
     "/subscribe/{id}": {
       "get": {
-       "summary": "retorna a incrição caso o usuario esteja incrito, e necessario que um token valido seja passado no headers (authorization)",
-       "description": "essa rota será responsavel por retorna informações de incrição",
+       "summary": "retorna a inscrição caso o usuario esteja inscrito, e necessario que um token valido seja passado no headers (authorization)",
+       "description": "essa rota será responsavel por retorna informações de inscrição",
        "tags": ["subscribe"],
        "parameters": [
         {
@@ -348,8 +348,8 @@
     },
     "/subscribe/{:id}": {
       "delete": {
-       "summary": "desinscreve caso o usuario esteja incrito, e necessario que um token valido seja passado no headers (authorization)",
-       "description": "essa rota será responsavel por fazer o unsubcribe",
+       "summary": "desinscreve caso o usuario esteja inscrito, e necessário que um token válido seja passado no headers (authorization)",
+       "description": "essa rota será responsável por fazer o unsubscribe",
        "tags": ["unsubscribe"],
        "parameters": [
         {

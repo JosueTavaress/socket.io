@@ -52,7 +52,7 @@ npm install
 ## ☕ Usando `chatTime`
 
 
-o backend está setado na porta 5050 e frontend na porta 5000 (localhost)
+o backend está apontando para a porta 5050 e frontend na porta 5000 (localhost)
 
 
 ## 📫  Para contribuir com o projeto `chatTime`
